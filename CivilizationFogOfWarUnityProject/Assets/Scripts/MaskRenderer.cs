@@ -108,9 +108,7 @@ public class MaskRenderer : MonoBehaviour
     private void OnDestroy()
     {
         buffer?.Dispose();
-
-        if (maskTexture != null)
-            DestroyImmediate(maskTexture);
+        maskTexture?.Release();
     }
 
     //Setup all buffers and variables
